@@ -6,7 +6,7 @@ export default function Posts() {
   const [editingPostId, setEditingPostId] = useState(null); // New state to track editing post id
 
   async function getPost() {
-    let res = await fetch(`http://localhost:8080/userpost/`, {
+    let res = await fetch(`https://calm-uniform-eel.cyclic.app/userpost/`, {
       method: "GET",
       mode: "cors",
       credentials: "include",

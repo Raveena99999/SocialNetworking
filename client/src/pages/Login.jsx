@@ -17,7 +17,8 @@ export default function Login() {
 async function handleSubmit(e) {
 e.preventDefault()
   try {
-    let res = await fetch("http://localhost:8080/user/login", {
+    let res = await fetch("https://calm-uniform-eel.cyclic.app/user/login", 
+    {
       method: "POST",
       headers: { "Content-Type": "application/json" },
 
@@ -33,29 +34,13 @@ e.preventDefault()
      console.log(isLogin);
 alert("you logged in successfully")
    
-      // toast({
-      //   position:"top",
-      //   title: "Logged In",
-      //   description: "You Logged in Successfully",
-      //   status: "success",
-      //   duration: 9000,
-      //   isClosable: true,
-      // });
+   
 
 
     } else {
-      // setIsLoggedIn(false);
       setIsLogin(false)
       alert("please enter valid crendtials")
-      // toast({
-      //   position:"top",
-
-      //   title: "Invalid Credential",
-      //   description: "Please enter valid credentials",
-      //   status: "error",
-      //   duration: 9000,
-      //   isClosable: true,
-      // });
+      
     }
     
   } catch (error) {
@@ -77,7 +62,7 @@ alert("you logged in successfully")
 
 <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
   <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-    {/* <img class="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company"/> */}
+   
     <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Login in to your account</h2>
   </div>
 
@@ -94,9 +79,7 @@ alert("you logged in successfully")
       <div>
         <div class="flex items-center justify-between">
           <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
-          {/* <div class="text-sm">
-            <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</a>
-          </div> */}
+        
         </div>
         <div class="mt-2">
           <input   onChange={handleChange}

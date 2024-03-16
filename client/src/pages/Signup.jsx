@@ -16,7 +16,8 @@ export default function Signup() {
   async function handleSubmit(event) {
     event.preventDefault();
     let response = await fetch(
-      `http://localhost:8080/user/register`,
+      // `http://localhost:8080/user/register`,
+      `https://calm-uniform-eel.cyclic.app/user/register`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
