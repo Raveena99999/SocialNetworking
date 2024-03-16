@@ -17,9 +17,7 @@ export default function Navbar() {
       if (data.msg == "you logged out successfully") {
         setIsLogin(false);
 
-        // localStorage.removeItem("username");
-          // setUsername(null);
-
+      
         console.log(isLogin);
         alert(" logged out successfully")
         // toast({
