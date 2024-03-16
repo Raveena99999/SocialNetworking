@@ -14,7 +14,8 @@ export default function Login() {
     [e.target.name]: e.target.value,
   });
 }
-async function handleSubmit() {
+async function handleSubmit(e) {
+e.preventDefault()
   try {
     let res = await fetch("http://localhost:8080/user/login", {
       method: "POST",
@@ -81,7 +82,7 @@ alert("you logged in successfully")
   </div>
 
   <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-    <form class="space-y-6" action="#" method="POST" onSubmit={handleSubmit}>
+    <form class="space-y-6" onSubmit={handleSubmit}>
       <div>
         <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
         <div class="mt-2">

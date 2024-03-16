@@ -5,7 +5,7 @@ export default function Navbar() {
   const {isLogin,setIsLogin} = useContext(Authcontext)
   async function handleLogout() {
     try {
-      const res = await fetch(`http://localhost:8080//user/logout`, {
+      const res = await fetch(`http://localhost:8080/user/logout`, {
         method: "GET",
         credentials: "include",
         mode: "cors",
@@ -14,7 +14,7 @@ export default function Navbar() {
         },
       });
       let data = await res.json();
-      if (data.msg === "you logged out successfully" && isLogin) {
+      if (data.msg == "you logged out successfully") {
         setIsLogin(false);
 
         // localStorage.removeItem("username");

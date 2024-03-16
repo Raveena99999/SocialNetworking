@@ -19,9 +19,9 @@ userprofileRouter.post("/add", async (req, res) => {
     
     const { userId, username, ...rest } = req.body;
 
-    if (!userId || !username) {
-      return res.status(400).send({ msg: "userId and username are required" });
-    }
+    // if (!userId || !username) {
+    //   return res.status(400).send({ msg: "userId and username are required" });
+    // }
 
     const userProfile = new UserProfileModel({ ...rest, userId, username });
     await userProfile.save();
