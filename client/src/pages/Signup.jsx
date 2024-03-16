@@ -17,7 +17,7 @@ export default function Signup() {
     event.preventDefault();
     let response = await fetch(
       // `http://localhost:8080/user/register`,
-      `https://calm-uniform-eel.cyclic.app/user/register`,
+      `https://kind-pear-springbok-cap.cyclic.app/user/register`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

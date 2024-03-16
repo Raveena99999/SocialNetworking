@@ -5,7 +5,7 @@ export default function Navbar() {
   const {isLogin,setIsLogin} = useContext(Authcontext)
   async function handleLogout() {
     try {
-      const res = await fetch(`http://localhost:8080/user/logout`, {
+      const res = await fetch(`https://kind-pear-springbok-cap.cyclic.app/user/logout`, {
         method: "GET",
         credentials: "include",
         mode: "cors",

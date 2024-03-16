@@ -17,7 +17,7 @@ export default function Login() {
 async function handleSubmit(e) {
 e.preventDefault()
   try {
-    let res = await fetch("https://calm-uniform-eel.cyclic.app/user/login", 
+    let res = await fetch("https://kind-pear-springbok-cap.cyclic.app/user/login", 
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },

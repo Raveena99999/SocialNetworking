@@ -6,7 +6,7 @@ export default function Posts() {
   const [editingPostId, setEditingPostId] = useState(null); // New state to track editing post id
 
   async function getPost() {
-    let res = await fetch(`https://calm-uniform-eel.cyclic.app/userpost/`, {
+    let res = await fetch(`https://kind-pear-springbok-cap.cyclic.app/userpost/`, {
       method: "GET",
       mode: "cors",
       credentials: "include",
@@ -24,7 +24,7 @@ export default function Posts() {
     try {
       event.preventDefault();
       console.log(post);
-      let res = await fetch(`http://localhost:8080/userpost/posts`, {
+      let res = await fetch(`https://kind-pear-springbok-cap.cyclic.app/userpost/posts`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         mode: "cors",
@@ -52,7 +52,7 @@ export default function Posts() {
 
   async function handleDelete(id) {
     try {
-      let res = await fetch(`http://localhost:8080/userpost/delete/${id}`, {
+      let res = await fetch(`https://kind-pear-springbok-cap.cyclic.app/userpost/delete/${id}`, {
         method: "DELETE",
         mode: "cors",
         credentials: "include",
@@ -66,7 +66,7 @@ export default function Posts() {
 
   async function handleUpdate(id, updatedContent) {
     try {
-      let res = await fetch(`http://localhost:8080/userpost/update/${id}`, {
+      let res = await fetch(`https://kind-pear-springbok-cap.cyclic.app/userpost/update/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         mode: "cors",

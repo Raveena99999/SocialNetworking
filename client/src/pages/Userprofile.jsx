@@ -11,7 +11,7 @@ export default function Userprofile() {
   const [editingIndex, setEditingIndex] = useState(-1);
 
   async function getProfile() {
-    let res = await fetch(`http://localhost:8080/userprofile/`, {
+    let res = await fetch(`https://kind-pear-springbok-cap.cyclic.app/userprofile/`, {
       method: "GET",
       mode: "cors",
       credentials: "include",
@@ -29,7 +29,7 @@ export default function Userprofile() {
     try {
       event.preventDefault();
       console.log(profile);
-      let res = await fetch(`http://localhost:8080/userprofile/add`, {
+      let res = await fetch(`https://kind-pear-springbok-cap.cyclic.app/userprofile/add`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         mode: "cors",
@@ -56,7 +56,7 @@ export default function Userprofile() {
 
   async function handleDelete(id) {
     try {
-      let res = await fetch(`http://localhost:8080/userprofile/delete/${id}`, {
+      let res = await fetch(`https://kind-pear-springbok-cap.cyclic.app/userprofile/delete/${id}`, {
         method: "DELETE",
         mode: "cors",
         credentials: "include",
@@ -72,7 +72,7 @@ export default function Userprofile() {
     try {
       // Make PATCH request to update user profile
       let res = await fetch(
-        `http://localhost:8080/userprofile/update/${profileData[index]._id}`,
+        `https://kind-pear-springbok-cap.cyclic.app/userprofile/update/${profileData[index]._id}`,
         {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
