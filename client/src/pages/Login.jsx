@@ -110,7 +110,7 @@ alert("you logged in successfully")
 
     <p class="mt-10 text-center text-sm text-gray-500">
       New member?
-      <Link  to="/signup" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Login</Link>
+      <Link  to="/signup" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">signup</Link>
     </p>
   </div>
 </div>

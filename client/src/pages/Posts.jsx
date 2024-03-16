@@ -74,38 +74,33 @@ async function handleDelete(id) {
 
 
   return (
-    <div>
-      <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
-  <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-    {/* <img class="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company"/> */}
-    <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Your Posts</h2>
+    <div >
+      <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8" style={{display:"flex",border:"2px solid red"}}>
+  <div class="sm:mx-auto sm:w-full sm:max-w-sm" >
+   
+    <h2 class=" text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Your Posts</h2>
   </div>
 
   <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
     <form class="space-y-6" action="#" method="POST" onSubmit={handleSubmit}>
-      {/* <div>
-        <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Username</label>
-        <div class="mt-2">
-          <input id="username" name="username" type="email" autocomplete="username" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
-        </div>
-      </div> */}
+     
 
      
 
-<textarea value={post.textContent} onChange={handleChange}  name="textContent" id="" cols="30" rows="10" placeholder='Write Your Post'></textarea>
+<textarea style={{ width:"100%",margin:"auto"}} value={post.textContent} onChange={handleChange}  name="textContent" id="" cols="30" rows="10" placeholder='Write Your Post'></textarea>
       <div >
-        <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">create post</button>
+        <button type="submit" class="flex w-60 m-auto mb-6 justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">create post</button>
       </div>
     </form>
    
     
   </div>
-  <div style={{border:"2px solid black" ,height:"10vh"}}>
+  <div style={{border:"2px solid black" ,height:"auto"}}>
           {postData.map((post, index) => (
             <div key={index} class="bg-gray-100 p-4 mt-4">
               <p class="text-pink-400">{post.textContent}</p>
-              <button onClick={()=>{handleDelete(post._id)}}>Delete</button>
-              <button>Update</button>
+              <button style={{border:"2px solid black",borderRadius:"0.8rem" ,padding:"0.1rem",fontSize:"20px"}} onClick={()=>{handleDelete(post._id)}}>Delete</button>
+              <button style={{marginLeft:"1rem",border:"2px solid black",borderRadius:"0.8rem" ,padding:"0.1rem",fontSize:"20px"}}>Update</button>
             </div>
           ))}
         </div>

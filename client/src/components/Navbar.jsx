@@ -1,7 +1,51 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-
+import {Authcontext} from "../context/Authcontextprovider"
 export default function Navbar() {
+  const {isLogin,setIsLogin} = useContext(Authcontext)
+  async function handleLogout() {
+    try {
+      const res = await fetch(`http://localhost:8080//user/logout`, {
+        method: "GET",
+        credentials: "include",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      let data = await res.json();
+      if (data.msg === "you logged out successfully" && isLogin) {
+        setIsLogin(false);
+
+        // localStorage.removeItem("username");
+          // setUsername(null);
+
+        console.log(isLogin);
+        alert(" logged out successfully")
+        // toast({
+        //   title: "Logged Out",
+        //   description: "You Logged out successfully",
+        //   status: "success",
+        //   duration: 9000,
+        //   isClosable: true,
+        // });
+      } else {
+        console.log(isLogin);
+         alert("something went wrong")
+
+        // toast({
+        //   title: "Error",
+        //   description: "Something went wrong",
+        //   status: "error",
+        //   duration: 9000,
+        //   isClosable: true,
+        // });
+      }
+    } catch (error) {
+      console.log({error:error.message});
+    }
+  }
+
   return (
     <div>
         <nav class="bg-gray-800">
@@ -12,9 +56,7 @@ export default function Navbar() {
           <span class="absolute -inset-0.5"></span>
           <span class="sr-only">Open main menu</span>
         
-          {/* <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg> */}
+        
         
           <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -22,9 +64,7 @@ export default function Navbar() {
         </button>
       </div>
       <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-        {/* <div class="flex flex-shrink-0 items-center">
-          <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company"/>
-        </div> */}
+       
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
             <Link to="/" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Dashboard</Link>
@@ -54,8 +94,8 @@ export default function Navbar() {
 
           <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
             <Link to="userprofile" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</Link>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
-            <button class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</button>
+           
+            <button onClick={handleLogout} class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</button>
           </div>
         </div>
       </div>
