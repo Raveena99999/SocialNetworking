@@ -8,6 +8,7 @@ export default function Userprofile() {
     bio: "",
     profilePictureUrl: "",
   });
+
   const [editingIndex, setEditingIndex] = useState(-1);
 
   async function getProfile() {
